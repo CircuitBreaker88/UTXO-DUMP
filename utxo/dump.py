@@ -32,6 +32,8 @@ def get_magic(network, coin):
             return bytearray.fromhex('0b 11 09 07') #testnetBitcoinMagic
         elif coin == "anon":
             return bytearray.fromhex('7a 74 8d 38') #testnetAnonMagic
+        elif coin == "tour":
+            return bytearray.fromhex('57 6A 45 D1') #testnetTOURMagic
     elif network == "mainnet":
         if coin == "zcl":
             return bytearray.fromhex('24 e9 27 64') #mainnetZCLMagic
@@ -39,6 +41,8 @@ def get_magic(network, coin):
             return bytearray.fromhex('f9 be b4 d9') #mainnetBitcoinMagic
         elif coin == "anon":
             return bytearray.fromhex('83 d8 47 a7') #mainnetAnonMagic
+        elif coin == "tour":
+            return bytearray.fromhex('f4 99 d6 1e') #mainnetTOURMagic
     assert 0, "The provided network or coin name aren't supported. Use the following network: 'mainnet' or 'testnet'; coin: 'zcl' or 'bitcoin' "
 
 
@@ -194,4 +198,3 @@ def dump_utxos(datadir, output_dir, n, convert_segwit,
     print("Total T written: \t%d" % j)
     print("##########################################")
     return { 't_transactions_total': j, 't_files_written': n }
-
